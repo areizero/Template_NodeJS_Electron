@@ -1,0 +1,14 @@
+{
+  "name": "_TemplateElectronProject",
+  "version": "0.0.1",
+  "main": "main.js",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "mongodb": "^2.1.18"
+  }
+}

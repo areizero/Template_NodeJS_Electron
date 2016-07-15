@@ -1,0 +1,533 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+    rel="stylesheet" type="text/css">-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/bootstrapValidator.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/krill.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/animate.css" rel="stylesheet" type="text/css">
+  </head><body>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h6 class="panel-title">Productor
+                  <b>
+                    <small class="text-info" id="curUserName" style="color:#ccffff">nadie</small>
+                  </b>
+                </h6>
+              </div>
+              <div class="panel-body">
+                <div class="section">
+                  <div class="container">
+                    <form class="form-horizontal" role="form" id="productorData">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <div class="col-sm-4">
+                              <label for="txtPCNumber" class="control-label label-sm">Identificación:</label>
+                            </div>
+                            <div class="col-sm-5">
+                              <input type="text" class="form-control input-sm" id="txtPCNumber" placeholder="Número de identificación" required="">
+                            </div>
+                            <div class="col-sm-3">
+                              <select id="ddPCType" class="form-control input-sm" required="">
+                                <option value=""></option>
+                                <option value="CC">CC</option>
+                                <option value="TI">TI</option>
+                                <option value="CE">CE</option>
+                                <option value="PAS">PAS</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-4">
+                              <label for="txtPName" class="control-label label-sm">Nombre:</label>
+                            </div>
+                            <div class="col-sm-8">
+                              <input type="text" id="txtPName" class="form-control input-sm">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-4">
+                              <label for="txtPDir" class="control-label label-sm">Dirección:</label>
+                            </div>
+                            <div class="col-sm-8">
+                              <input type="text" id="txtPDir" class="form-control input-sm">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-4">
+                              <label for="ddPUbicacion" class="control-label label-sm">Ubicación:</label>
+                            </div>
+                            <div class="col-sm-8">
+                              <select id="ddPUbicacion" class="form-control input-sm">
+                                <option value="">Seleccione</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-2 text-center">
+                          <div class="btn-group-vertical">
+                            <button type="button" class="btn btn-primary btn-xs" id="btnProdSearch">Buscar</button>
+                            <button type="button" class="btn btn-primary btn-xs" id="btnProdReg">Registrar</button>
+                            <button type="button" class="btn btn-primary btn-xs" id="btnProdUpd">Actualizar</button>
+                            <a class="btn btn-default btn-xs">Pendientes</a>
+                            <a class="btn btn-default btn-xs">Historial Pagos</a>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h1 class="panel-title">Parámetros Liquidación</h1>
+              </div>
+              <div class="panel-body">
+                <div class="section">
+                  <div class="container">
+                    <form class="form-horizontal is-read-only" role="form" id="paramForm">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="fRend" class="control-label label-sm">Factor Rendimiento Compra:</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="fRend" name="parNum" class="form-control input-sm" required="">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="vServBen" class="control-label label-sm">Valor servicio beneficio ($ x @CPS):</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="vServBen" name="parNum" class="form-control input-sm" required="">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="vFletes" class="control-label label-sm">Valor fletes ($ x kg CC):</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="vFletes" name="parNum" class="form-control input-sm" required="">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="vCompra" class="control-label label-sm">Valor compra ($ x carga CPS):</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="vCompra" name="parNum" class="form-control input-sm" required="">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="vCompraPas" class="control-label label-sm">Valor compra pasilla ($ x kg):</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="vCompraPas" name="parNum" class="form-control input-sm" required="">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="fcalAlmendra" class="control-label label-sm">Factor calculo Almendra:</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="fcalAlmendra" name="parNum" class="form-control input-sm" required="">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="fcalRendimiento" class="control-label label-sm">Factor calculo Rendimiento:</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="fcalRendimiento" name="parNum" class="form-control input-sm" required="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-2 text-center">
+                          <div class="btn-group-vertical">
+                            <a class="btn btn-default btn-xs" id="compraPar">Cambiar</a>
+                            <button type="button" class="btn btn-primary btn-xs" id="btnDefPar" data-toggle="tooltip" data-placement="right" title="Establecer parametros para la actual sesion">Actualizar</button>
+                            <button type="button" class="btn btn-primary btn-xs" id="btnCurComPar" data-toggle="tooltip" data-placement="right" title="Establecer parametros para la compra actual">Actualizar Compra</button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h6 class="panel-title">Datos Compra
+                  <b>
+                    <small class="text-info" id="curCompra" style="color:#ccffff">Carga (compra)
+                      <label class="text-info" id="curCompraRem" style="color:#ccffff"></label>
+                    </small>
+                  </b>
+                  <button type="button" class="btn btn-krill-primary btn-xxs" id="aModal" data-toggle="modal" data-target="#modalCargas">Ver</button>
+                </h6>
+              </div>
+              <div class="panel-body">
+                <div class="section">
+                  <div class="container">
+                    <form class="form-horizontal" role="form" id="compra">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <div class="col-sm-6">
+                              <label for="cargaNombreLote" class="control-label label-sm">Nombre Lote:</label>
+                            </div>
+                            <div class="col-sm-6">
+                              <input type="text" id="cargaNombreLote" class="form-control input-sm">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-6">
+                              <label for="cargaTipoCafe" class="control-label label-sm">Tipo de cafe:</label>
+                            </div>
+                            <div class="col-sm-6">
+                              <select id="cargaTipoCafe" class="form-control input-sm" data-toggle="tooltip" data-placement="top" title="Tipo de cafe">
+                                <option value=""></option>
+                                <option value="cereza">CEREZA</option>
+                                <option value="xxx">XXX</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-6">
+                              <label for="cargaAspecto" class="control-label label-sm">Aspecto:</label>
+                            </div>
+                            <div class="col-sm-6">
+                              <select id="cargaAspecto" class="form-control input-sm" data-toggle="tooltip" data-placement="top" title="Aspecto">
+                                <option value=""></option>
+                                <option value="fresco">FRESCO</option>
+                                <option value="xxx">XXX</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <div class="col-sm-7">
+                              <label for="cargaNBultos" class="control-label label-sm">Numero de bultos:</label>
+                            </div>
+                            <div class="col-sm-5">
+                              <input type="text" id="cargaNBultos" class="form-control input-sm" data-toggle="tooltip" data-placement="top">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-7">
+                              <label for="cargaPeso" class="control-label label-sm">Peso bruto (kg):</label>
+                            </div>
+                            <div class="col-sm-5">
+                              <input type="text" id="cargaPeso" class="form-control input-sm" data-toggle="tooltip" data-placement="top" title="Peso bruto (kg)">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-7">
+                              <label for="cargaDestare" class="control-label label-sm">Destare (kg):</label>
+                            </div>
+                            <div class="col-sm-5">
+                              <input type="text" id="cargaDestare" class="form-control input-sm" data-toggle="tooltip" data-placement="top" title="Destare (kg)">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-3 is-read-only">
+                          <div class="form-group ">
+                            <div class="col-sm-7">
+                              <label for="cargaPesoNeto" class="control-label label-sm">Peso neto (kg):</label>
+                            </div>
+                            <div class="col-sm-5">
+                              <input type="text" id="cargaPesoNeto" class="form-control input-sm" data-toggle="tooltip" data-placement="top" title="Peso neto (kg)" readonly="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-3 text-center">
+                          <div class="btn-group-vertical">
+                            <button type="button" class="btn btn-primary btn-xs" id="btnRecCarga">Aceptar</button>
+                            <button type="button" class="btn btn-primary btn-xs" id="btnActCarga">Actualizar datos</button>
+                            <button type="button" class="btn btn-primary btn-xs" id="btnNewCarga">Nueva Carga</button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Analisis Café Cereza</h3>
+              </div>
+              <div class="panel-body">
+                <div class="section">
+                  <div class="container">
+                    <form class="form-horizontal" role="form" id="analisisCereza">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="acPesoMuestra" class="control-label label-sm">Peso muestra cereza (g):</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="acPesoMuestra" class="form-control input-sm pesoGramo" placeholder="Peso muestra cereza (g)" data-toggle="tooltip" data-placement="top" title="Peso muestra cereza (g)" value="1000">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="acPesoGranoEs" class="control-label label-sm">Peso Grano escurrido y limpio (g):</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="acPesoGranoEs" class="form-control input-sm pesoGramo" data-toggle="tooltip" data-placement="top" title="Peso Grano escurrido y limpio (g)">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="acPesoPasillas" class="control-label label-sm">Peso Pasillas (g):</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="acPesoPasillas" class="form-control input-sm pesoGramo" data-toggle="tooltip" data-placement="top" title="Peso Pasillas (g)">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="acPesoFlot1" class="control-label label-sm">P. Flotes 1 (g):</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="acPesoFlot1" class="form-control input-sm pesoGramo" data-toggle="tooltip" data-placement="top" title="Peso Flotes 1 (g)">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="acPesoFlot2" class="control-label label-sm">P. Flotes 2 (g):</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="acPesoFlot2" class="form-control input-sm pesoGramo" data-toggle="tooltip" data-placement="top" title="Peso Flotes 2 (g)">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="acPesoBroca" class="control-label label-sm">Peso Broca (g):</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="acPesoBroca" class="form-control input-sm pesoGramo" data-toggle="tooltip" data-placement="top" title="Peso Broca (g)">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4 is-read-only">
+                          <div class="form-group ">
+                            <div class="col-sm-8">
+                              <label for="acPesoHumedo" class="control-label label-sm">Peso Total Grano Humedo (g):</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="acPesoHumedo" class="form-control input-sm" data-toggle="tooltip" data-placement="top" title="Peso Total Grano Humedo (g)" readonly="">
+                            </div>
+                          </div>
+                          <div class="form-group ">
+                            <div class="col-sm-8">
+                              <label for="acConvC01" class="control-label label-sm">Conversion cereza (kg CC/@ CPS):</label>
+                            </div>
+                            <div class="col-sm-4 text-left">
+                              <input type="text" id="acConvC01" class="form-control input-sm" data-toggle="tooltip" data-placement="top" title="Conversion cereza (kg CC/@ CPS) [kg]" readonly="">
+                            </div>
+                          </div>
+                          <div class="form-group ">
+                            <div class="col-sm-8">
+                              <label for="acConvC02" class="control-label label-sm">Conversion cereza (kg CC/kg CPS):</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="acConvC02" class="form-control input-sm" data-toggle="tooltip" data-placement="top" title="Conversion cereza (kg CC/kg CPS) [CC]" readonly="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-1 text-center">
+                          <div class="btn-group-vertical">
+                            <button type="button" class="btn btn-primary btn-xs" id="btnIndicrAnCC">Aceptar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Liquidación</h3>
+              </div>
+              <div class="panel-body">
+                <div class="section">
+                  <div class="container">
+                    <form class="form-horizontal" role="form" id="liquidacionData">
+                      <div class="row is-read-only">
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="liqFactRendCor" class="control-label label-sm">F. Rend. Corregido:</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="liqFactRendCor" class="form-control input-sm" readonly="">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="liqKilRealPer" class="control-label label-sm">Kilos reales pergamino:</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="liqKilRealPer" class="form-control input-sm" readonly="">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="liqKilPasilla" class="control-label label-sm">Kilos Pasilla (Kg):</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="liqKilPasilla" class="form-control input-sm" readonly="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="liqValRealCer" class="control-label label-sm">Valor real cereza ($/Kg Cafe Cereza):</label>
+                            </div>
+                            <div class="col-sm-3">
+                              <input type="text" id="liqValRealCer" class="form-control input-sm" readonly="">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="liqDescSB" class="control-label label-sm">Descuento servicio beneficio ($):</label>
+                            </div>
+                            <div class="col-sm-3">
+                              <input type="text" id="liqDescSB" class="form-control input-sm" readonly="">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="liqDescFlet" class="control-label label-sm">Descuento fletes ($):</label>
+                            </div>
+                            <div class="col-sm-3">
+                              <input type="text" id="liqDescFlet" class="form-control input-sm" readonly="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-3 is-read-only">
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="liqValPas" class="control-label label-sm">Valor pasilla ($):</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="liqValPas" class="form-control input-sm" readonly="">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-8">
+                              <label for="liqValCarga" class="control-label label-sm">Valor carga ($/carga CPS):</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" id="liqValCarga" class="form-control input-sm" readonly="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-2 is-read-only text-left">
+                          <div class="form-group">
+                            <div class="col-sm-3">
+                              <label for="liqValNeto" class="control-label label-sm">Valor Neto:</label>
+                            </div>
+                            <div class="col-sm-8">
+                              <br>
+                              <input type="text" id="liqValNeto" class="form-control input-sm" readonly="">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-5">
+                              <br>
+                            </div>
+                            <div class="col-sm-5">
+                              <div class="btn-group-vertical">
+                                <button type="button" id="liquidarCarga" class="btn btn-primary btn-xs">Liquidar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-md-12 ">
+            <div class="panel panel-default ">
+              <div class="panel-body ">
+                <button type="button " class="btn btn-krill-primary" id="acumularCarga ">Acumular</button>
+                <button type="button " class="btn btn-default ">Pagar</button>
+                <button type="button " class="btn btn-default ">Pago Masivo</button>
+                <button type="button " class="btn btn-krill-primary" data-toggle="modal " title="Iniciar nuevoproceso de recepción " data-target="#clearModal ">Limpiar</button>
+                <button type="button" class="btn btn-krill-primary" id="consultaCarga" data-toggle="modal" data-target="#modalBusqueda">Consultar carga</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div id="modalCargas" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h5 class="modal-title" id="modalCargasTit">
+              <b>Cargas</b>
+            </h5>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group" id="modalCargasList"></ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.$ = window.jQuery = require('./assets/js/jquery-1.12.3.min.js');
+    </script>
+    <script src="./assets/js/bootstrap.min.js "></script>
+    <script src="./assets/js/bootstrapValidator.min.js "></script>
+    <script src="./assets/js/bootstrap-notify.min.js "></script>
+    <script src="./attachServices.js "></script>
+    <script src="./app.js "></script>
+    <script src="./krillValidations.js "></script>
+
+
+</body></html>

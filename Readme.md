@@ -1,5 +1,5 @@
 # Project Template
-Electron Framework Template Skeleton, development of Desktop Apps.
+Electron Framework Template Skeleton.
 
 ### Technologies
 * [Node.js](https://nodejs.org/en/about/) (as BackEnd Technology)

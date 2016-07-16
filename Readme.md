@@ -10,5 +10,8 @@ Electron Framework Template Skeleton.
 * [Chai](http://chaijs.com/) (as Test Expectation / Mocha support tool)
 
 ### Nice Guides
+[NodeJS](http://www.tutorialspoint.com/nodejs/nodejs_introduction.htm): **Node.js Tutorial**   
 [Electron](https://www.theodo.fr/blog/2015/11/cross-platform-development-with-electron/): **Electron or how cross-platform development became effortless**   
 [Electron](http://tutorialzine.com/2015/12/creating-your-first-desktop-app-with-html-js-and-electron/): **Creating Your First Desktop App With HTML, JS and Electron**   
+[Mocha](https://mochajs.org/#getting-started): **Mocha: simple, flexible, fun**   
+[Mocha](http://webapplog.com/tdd/): **How To Use Mocha With Node.js For Test-Driven Development to Avoid Pain and Ship Products Faster**   

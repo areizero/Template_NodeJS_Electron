@@ -15,7 +15,7 @@ module.exports = {
             ret({res: false, msg: "The DBConnection isn't valid", err: -3});
             return false;
         }
-        var collection = dbConection.collection('liquidaciones');
+        var collection = dbConection.collection('persons');
         //  insert with connection of mongo-db
         collection.insert(dataObject, function (err, result){
         if (!err){

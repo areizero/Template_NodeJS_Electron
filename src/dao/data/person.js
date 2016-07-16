@@ -12,11 +12,11 @@ Person.prototype.setData = function(data){
     if(data.identityCardNumber != undefined)
         this.identityCardNumber = data.identityCardNumber;
     if(data.email != undefined)
-        this.email = data.mail;
+        this.email = data.email;
     if(data.address != undefined)
-        this.address = data.name;
-    if(data.phone != undefined)        
-        this.phone = data.phone;
+        this.address = data.address;
+    if(data.telephone != undefined)
+        this.telephone = data.telephone;
 }
 
 module.exports = Person;    //  Export object like NodeJS Module

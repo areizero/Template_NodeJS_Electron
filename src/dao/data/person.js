@@ -17,6 +17,8 @@ Person.prototype.setData = function(data){
         this.address = data.address;
     if(data.telephone != undefined)
         this.telephone = data.telephone;
+    if(data.test == true)
+        this.test = true;
 }
 
 module.exports = Person;    //  Export object like NodeJS Module

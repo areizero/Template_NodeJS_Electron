@@ -3,7 +3,7 @@ const app = electron.app;   //  Aplication Live Cycle control
 const BrowserWindow = electron.BrowserWindow;   //  Electron window creation
 const crashReporter = electron.crashReporter;;  // fail and error control (https://github.com/electron/electron/blob/master/docs/api/crash-reporter.md)
 
-crashReporter.start({productName: 'Krill', companyName: 'KoralAT', submitURL: 'https://localhost/error/crash.log'});
+crashReporter.start({productName: 'TemplateProduct', companyName: 'areizero inc.', submitURL: 'https://localhost/error/crash.log'});
 //crashReporter.start();    //  for old versions of electron
 var mainWindow = null;  //  main window (apparience of app)
 app.on('ready', createWindow);

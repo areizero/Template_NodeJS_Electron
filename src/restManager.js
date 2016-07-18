@@ -21,7 +21,7 @@ module.exports = {
                 console.log(err);
                 return;
             }
-            console.log('Set connection to MongoDB ' + process.env.MONGO_MYDB_URL);
+            console.log('Connection to MongoDB seted ' + process.env.MONGO_MYDB_URL);
             dbCon = database;   // connection object (maybe a Singleton can work!)
             app.listen(process.env.APP_SERVICES_PORT);
             console.log('Express services listening in port ' + process.env.APP_SERVICES_PORT);
@@ -35,8 +35,9 @@ module.exports = {
             }
 
             //  POST method of Person
-            console.log('Service deployment:  POST(\'/api/persons)\'');
+            console.log('Service deployment: POST(\'/api/persons\')');
             app.post('/api/persons', function (request, response) {
+                console.log("Inside /api/persons");
                 var cb = function(data){
                     if(data.res){
                         response.status(201);   //  http response for create
@@ -54,6 +55,10 @@ module.exports = {
                 var personObj = new Person(request.body.name, request.body.identityCardNumber);
                 personObj.setData(request.body);
                 persistence.createPerson(personObj, dbCon, cb); //llamamos la clase encargda de la persistencia
+            });
+            console.log('Service deployment: GET(\'/api/persons\')');
+            app.get('/api/persons', function (request, response) {
+                console.log("Inside /api/persons GET");
             });
         }
     }
